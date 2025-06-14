@@ -1,0 +1,89 @@
+# MLOps Pipeline Configuration
+registry_path: './model_registry'
+mlflow_uri: './mlruns'
+experiment_name: 'plant_disease_detection'
+
+# Model Training Parameters
+model_params:
+  n_estimators: 100
+  max_depth: 10
+  random_state: 42
+
+# Performance Thresholds
+performance_threshold: 0.8
+auto_promote_threshold: 0.85
+drift_threshold: 0.1
+
+# Monitoring Settings
+monitoring:
+  check_interval_hours: 24
+  min_samples_for_evaluation: 50
+  performance_window_days: 7
+
+# Retraining Settings
+retraining:
+  schedule: '0 2 * * 0'  # Weekly at 2 AM
+  trigger_on_drift: true
+  trigger_on_performance_drop: true
+  min_training_samples: 1000
+
+# Data Processing
+data_processing:
+  image_size: [224, 224]
+  augmentation: true
+  validation_split: 0.2
+  test_split: 0.2
+
+# Feature Engineering
+features:
+  fractal_methods:
+    - box_counting
+    - differential_box_counting
+    - blanket
+    - lacunarity
+    - multifractal
+  
+  morphological_features:
+    - compactness
+    - solidity
+    - form_factor
+    - skeleton_length
+  
+  texture_features:
+    - contrast
+    - dissimilarity
+    - homogeneity
+    - energy
+    - correlation
+    - ASM
+
+# Mobile Optimization
+mobile:
+  target_platforms:
+    - android
+    - ios
+    - edge_devices
+  
+  optimization_methods:
+    - quantization
+    - pruning
+    - compression
+  
+  performance_targets:
+    max_inference_time_ms: 500
+    max_model_size_mb: 10
+    min_accuracy: 0.85
+
+# API Configuration
+api:
+  host: '0.0.0.0'
+  port: 12000
+  cors_origins: ['*']
+  max_file_size_mb: 10
+  rate_limit_per_minute: 60
+
+# Logging
+logging:
+  level: INFO
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  file: './logs/pipeline.log'

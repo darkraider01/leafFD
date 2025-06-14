@@ -27,22 +27,55 @@ leafFD/
 │   ├── Tomato__Tomato_mosaic_virus/
 │   └── Tomato_healthy/
 ├── scripts/                         # Main processing scripts
-│   ├── extract_and_FD.py           # Feature extraction and FD calculation
-│   ├── model.py                    # Machine learning model training
+│   ├── extract_and_FD.py           # Basic feature extraction and FD calculation
+│   ├── advanced_fd_analysis.py     # Advanced multi-scale fractal analysis
+│   ├── model.py                    # Traditional machine learning model training
+│   ├── deep_learning_model.py      # Hybrid CNN + traditional ML with explainable AI
 │   ├── prediction.py               # Disease prediction with sustainability
-│   └── hash.py                     # Cryptographic certificate generation
-├── requirements.txt                 # Python dependencies
+│   ├── hash.py                     # Cryptographic certificate generation
+│   ├── web_api.py                  # Real-time web API with FastAPI
+│   ├── mlops_pipeline.py           # MLOps pipeline with monitoring and versioning
+│   └── mobile_optimization.py      # Mobile and edge deployment optimization
+├── requirements.txt                 # Python dependencies (enhanced)
+├── pipeline_config.yaml            # MLOps pipeline configuration
 └── README.md                       # This file
 ```
 
 ## 🚀 Features
 
-- **Fractal Dimension Analysis**: Calculates geometric and textural fractal dimensions
-- **Texture Feature Extraction**: Uses Gray-Level Co-occurrence Matrix (GLCM) for texture analysis
-- **Machine Learning Classification**: Random Forest classifier for disease detection
-- **Sustainability Assessment**: Incorporates farming practices into health scoring
+### Core Analysis
+- **Advanced Multi-Scale Fractal Analysis**: Multiple FD calculation methods (box counting, differential box counting, blanket method, lacunarity, multifractal)
+- **Texture Feature Extraction**: Uses Gray-Level Co-occurrence Matrix (GLCM) for comprehensive texture analysis
+- **Morphological Feature Analysis**: Shape complexity, skeleton analysis, and geometric properties
+
+### Machine Learning & AI
+- **Hybrid Deep Learning**: Combines CNN features with traditional fractal analysis
+- **Explainable AI**: LIME-based explanations for model predictions
+- **Ensemble Methods**: Multiple model approaches for robust predictions
+- **Knowledge Distillation**: Optimized student models for mobile deployment
+
+### MLOps & Production
+- **Model Versioning**: Complete model registry with version control
+- **Performance Monitoring**: Real-time model performance tracking
+- **Data Drift Detection**: Automatic detection of data distribution changes
+- **Automated Retraining**: Trigger-based model retraining pipeline
+- **A/B Testing**: Compare model versions in production
+
+### Web & Mobile
+- **Real-time Web API**: FastAPI-based service with interactive web interface
+- **Mobile Optimization**: TensorFlow Lite conversion with quantization and pruning
+- **Edge Deployment**: Optimized inference for resource-constrained devices
+- **Batch Processing**: Handle multiple images simultaneously
+
+### Security & Traceability
 - **Cryptographic Certificates**: Generates secure certificates for leaf identity verification
-- **Edge and Vein Enhancement**: Advanced image processing for better feature extraction
+- **Blockchain Integration**: Immutable record keeping for agricultural traceability
+- **Audit Trails**: Complete logging of predictions and model decisions
+
+### Sustainability & Analytics
+- **Sustainability Assessment**: Incorporates farming practices into health scoring
+- **Environmental Impact**: Carbon footprint tracking for AI operations
+- **Comprehensive Reporting**: Detailed analysis reports with visualizations
 
 ## 🛠️ Installation
 
@@ -59,64 +92,102 @@ pip install -r requirements.txt
 
 ## 📊 Usage
 
-### Step 1: Feature Extraction
+### Quick Start with Web API
 
-Extract fractal dimension features from your plant images:
+Launch the real-time web interface:
 
+```bash
+python scripts/web_api.py
+```
+
+Then open your browser to `http://localhost:12000` for an interactive web interface where you can:
+- Upload leaf images for instant analysis
+- Input sustainability data
+- View detailed results with fractal analysis
+- Download comprehensive reports
+
+### Advanced Usage
+
+#### 1. Advanced Feature Extraction
+
+Extract comprehensive fractal features using multiple methods:
+
+```bash
+python scripts/advanced_fd_analysis.py
+```
+
+This provides:
+- Multiple fractal dimension calculation methods
+- Morphological feature analysis
+- Enhanced preprocessing techniques
+- Detailed feature visualization
+
+#### 2. Hybrid Deep Learning Model
+
+Train the advanced hybrid model combining CNN and traditional features:
+
+```bash
+python scripts/deep_learning_model.py
+```
+
+Features:
+- EfficientNet-based feature extraction
+- Hybrid architecture combining CNN and fractal features
+- LIME-based explainable AI
+- Comprehensive model evaluation
+
+#### 3. MLOps Pipeline
+
+Set up production-ready ML pipeline:
+
+```bash
+python scripts/mlops_pipeline.py
+```
+
+Capabilities:
+- Model versioning and registry
+- Performance monitoring
+- Data drift detection
+- Automated retraining triggers
+- A/B testing support
+
+#### 4. Mobile Optimization
+
+Optimize models for mobile deployment:
+
+```bash
+python scripts/mobile_optimization.py
+```
+
+This provides:
+- TensorFlow Lite conversion
+- Model quantization and pruning
+- Performance benchmarking
+- Mobile deployment packages
+
+#### 5. Traditional Workflow
+
+For the original workflow:
+
+**Step 1: Basic Feature Extraction**
 ```bash
 python scripts/extract_and_FD.py
 ```
 
-This script will:
-- Process all images in the [`PlantVillage/`](#project-structure) directory
-- Calculate geometric and textural fractal dimensions
-- Extract GLCM texture features (contrast, dissimilarity, homogeneity, energy, correlation, ASM)
-- Save processed edge and texture images
-- Generate a CSV file with all extracted features
-
-### Step 2: Model Training
-
-Train the machine learning classifier:
-
+**Step 2: Traditional Model Training**
 ```bash
 python scripts/model.py
 ```
 
-This will:
-- Load the feature data from the CSV file
-- Split data into training and testing sets
-- Train a Random Forest classifier
-- Evaluate model performance
-- Save the trained model and label encoder
-
-### Step 3: Disease Prediction
-
-Make predictions on new leaf images:
-
+**Step 3: Prediction**
 ```bash
 python scripts/prediction.py
 ```
 
-The prediction system will:
-- Prompt for an image path
-- Extract fractal dimension features
-- Request sustainability data (soil health, water usage, pesticide usage, farming techniques)
-- Provide comprehensive health assessment
-- Log predictions for future reference
-
-### Step 4: Generate Certificates (Optional)
-
-Create cryptographic certificates for leaf verification:
-
+**Step 4: Certificate Generation**
 ```bash
 python scripts/hash.py
 ```
-
-This generates secure JSON certificates containing:
-- Image hash and identity verification
-- Fractal dimension biometrics
-- Timestamp and metadata
-- Cryptographic binding of image and FD data
 
 ## 🔬 Technical Details
 
